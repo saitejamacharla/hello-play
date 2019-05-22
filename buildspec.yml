@@ -24,4 +24,4 @@ phases:
 
 artifacts:
   files:
-    - src\target\universal\hello-play-1.0-SNAPSHOT.zip\*
+    - src\target\universal\*
