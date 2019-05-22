@@ -16,12 +16,11 @@ phases:
       - REPOSITORY_NAME=hello-play
   build:
     commands:
+      - printf '{"repository":"%s"}' $REPOSITORY_NAME > build.json
       - cd ./src/
       - sbt compile
       - sbt test
       - sbt dist
-      - printf '{"repository":"%s"}' $REPOSITORY_NAME > build.json
-
 artifacts:
   files:
     - src/target/universal/*
