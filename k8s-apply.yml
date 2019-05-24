@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-play
+spec:
+  selector:
+    matchLabels:
+      app: hello-play
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-play
+    spec:
+      containers:
+      - name: hello-play
+        image: 928267972908.dkr.ecr.eu-central-1.amazonaws.com/hello-play:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp
+spec:
+  selector:
+    app: webapp
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 9000
+  type: LoadBalancer
