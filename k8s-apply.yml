@@ -19,10 +19,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapp
+  name: hello-play
 spec:
   selector:
-    app: webapp
+    app: hello-play
   ports:
   - name: http
     port: 80
