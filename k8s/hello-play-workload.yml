@@ -29,3 +29,4 @@ spec:
     protocol: TCP
     targetPort: 9000
   type: LoadBalancer
+  
